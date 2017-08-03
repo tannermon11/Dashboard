@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Twitch:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Twitch_jar</output-path>
+    <root id="archive" name="Twitch.jar">
+      <element id="module-output" name="Twitch" />
+    </root>
+  </artifact>
+</component>
