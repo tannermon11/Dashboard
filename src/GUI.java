@@ -19,9 +19,11 @@ public class GUI extends JFrame {
     JPanel clock = new JPanel();
     JPanel stopWatch = new JPanel();
     JPanel twitch = new JPanel();
+    JPanel champions = new JPanel();
     JLabel message = new JLabel("Type URL to open here: ");
     JTextField input = new JTextField();
-    JTextField search = new JTextField(15);
+    public static JTextField champSearch = new JTextField(10);
+    JTextField videoSearch = new JTextField(15);
     JButton open = new JButton("Open");
     JButton searchButton = new JButton("Search");
     JLabel favLabel = new JLabel("Favorites");
@@ -35,6 +37,7 @@ public class GUI extends JFrame {
     JList<String> favList;
     JList<String> twitchList;
     File f = new File(FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\URLFavorites.txt");
+
 
     public GUI() {
         Clock cl = new Clock();
@@ -51,13 +54,14 @@ public class GUI extends JFrame {
         top.add(save);
         fav.add(favLabel);
         fav.add(favList);
-        yt.add(search);
+        yt.add(videoSearch);
         yt.add(searchButton);
         mic.add(mute);
         clock.add(cl);
         clock.add(alwaysActive);
         stopWatch.add(sw);
         twitch.add(twitchList);
+        champions.add(champSearch);
         tp.addTab("Sites", url);
         tp.addTab("Youtube", yt);
         tp.addTab("Restart explorer", explorer);
@@ -65,6 +69,7 @@ public class GUI extends JFrame {
         tp.addTab("Clock", clock);
         tp.addTab("Stop Watch", stopWatch);
         tp.addTab("Twitch", twitch);
+        tp.addTab("Champion.GG", champions);
 
         yt.setSize(new Dimension(200, 100));
 
@@ -114,7 +119,7 @@ public class GUI extends JFrame {
         save.addActionListener(e -> save());
 
         searchButton.addActionListener(e -> {
-            String text = search.getText();
+            String text = videoSearch.getText();
             text = text.replace(" ", "%20");
             MyTwitch.openUrl("youtube.com/results?search_query=" + text);
         });
@@ -235,7 +240,7 @@ public class GUI extends JFrame {
             }
         });
 
-        search.addKeyListener(new KeyListener() {
+        videoSearch.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
 
@@ -245,7 +250,7 @@ public class GUI extends JFrame {
             public void keyPressed(KeyEvent e) {
 
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    String value = search.getText().replace(" ", "%20");
+                    String value = videoSearch.getText().replace(" ", "%20");
                     MyTwitch.openUrl("youtube.com/results?search_query=" + value);
                 }
             }
