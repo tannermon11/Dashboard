@@ -20,7 +20,6 @@ public class Suggestion {
 
 	static ArrayList<String> words = new ArrayList<>();
 	public Suggestion() {
-
 		GUI gui = new GUI();
 		//JFrame frame = new JFrame();
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

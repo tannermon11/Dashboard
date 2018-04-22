@@ -42,6 +42,7 @@ public class GUI extends JFrame {
     public GUI() {
         Clock cl = new Clock();
         Stopwatch sw = new Stopwatch();
+        Suggestion sg = new Suggestion();
         listModel = new DefaultListModel<>();
         favList = new JList<>(listModel);
         twitchModel = new DefaultListModel<>();
