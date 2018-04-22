@@ -6,7 +6,7 @@ import java.io.IOException;
  */
 public class MyTwitch {
     public static void main(String[] args) {
-        new GUI();
+        //new GUI();
         /*Mixer.Info [] mixers = AudioSystem.getMixerInfo();
         System.out.println("There are " + mixers.length + " mixer info objects");
 

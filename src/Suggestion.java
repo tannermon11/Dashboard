@@ -20,12 +20,11 @@ public class Suggestion {
 
 	static ArrayList<String> words = new ArrayList<>();
 	public Suggestion() {
-		GUI gui = new GUI();
 		//JFrame frame = new JFrame();
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-		AutoSuggestor autoSuggestor = new AutoSuggestor(GUI.champSearch, gui, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f) {
+		AutoSuggestor autoSuggestor = new AutoSuggestor(GUI.champSearch, new GUI(), null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f) {
 			int max = 0;
 			@Override
 
