@@ -21,9 +21,11 @@ public class GUI extends JFrame {
     JPanel stopWatch = new JPanel();
     JPanel twitch = new JPanel();
     JPanel champions = new JPanel();
+    JPanel emotes = new JPanel();
     JLabel message = new JLabel("Type URL to open here: ");
     JTextField input = new JTextField();
     public static JTextField champSearch = new JTextField(10);
+    JTextField emoteSearch = new JTextField(15);
     JTextField videoSearch = new JTextField(15);
     JButton open = new JButton("Open");
     JButton searchButton = new JButton("Search");
@@ -66,6 +68,7 @@ public class GUI extends JFrame {
         stopWatch.add(sw);
         twitch.add(twitchList);
         champions.add(champSearch);
+        emotes.add(emoteSearch);
         tp.addTab("Sites", url);
         tp.addTab("Youtube", yt);
         tp.addTab("Restart explorer", explorer);
@@ -75,6 +78,7 @@ public class GUI extends JFrame {
         tp.addTab("Stop Watch", stopWatch);
         tp.addTab("Twitch", twitch);
         tp.addTab("Champion.GG", champions);
+        tp.addTab("Emotes", emotes);
 
         yt.setSize(new Dimension(200, 100));
 
@@ -257,6 +261,27 @@ public class GUI extends JFrame {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     String value = videoSearch.getText().replace(" ", "%20");
                     MyTwitch.openUrl("youtube.com/results?search_query=" + value);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
+        emoteSearch.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    String value = emoteSearch.getText().replace(" ", "+");
+                    MyTwitch.openUrl("https://www.frankerfacez.com/emoticons/?q="+value+"&sort=count-desc");
                 }
             }
 
