@@ -77,6 +77,7 @@ public class Suggestion {
 						words.add("Jayce");
 						words.add("Jhin");
 						words.add("Jinx");
+						words.add("Kai'sa");
 						words.add("Kalista");
 						words.add("Karma");
 						words.add("Karthus");
@@ -113,6 +114,7 @@ public class Suggestion {
 						words.add("Orianna");
 						words.add("Pantheon");
 						words.add("Poppy");
+						words.add("Pyke");
 						words.add("Quinn");
 						words.add("Rakan");
 						words.add("Rammus");
@@ -159,7 +161,7 @@ public class Suggestion {
 						words.add("Wukong");
 						words.add("Xayah");
 						words.add("Xerath");
-						words.add("Zin Zhao");
+						words.add("Xin Zhao");
 						words.add("Yasuo");
 						words.add("Yorick");
 						words.add("Zac");

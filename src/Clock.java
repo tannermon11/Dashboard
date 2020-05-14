@@ -8,16 +8,14 @@ import java.util.Date;
 /**
  * Created by Tanner on 10/4/2016.
  */
-public class Clock extends JPanel{
-
-    clockLabel clockTime = new clockLabel("time");
-    clockLabel clockDate = new clockLabel("date");
-    clockLabel clockDay = new clockLabel("day");
-
-    public Clock() {
-        setPreferredSize(new Dimension(550,100));
+class Clock extends JPanel{
+    Clock() {
+        setPreferredSize(new Dimension(600,100));
         setLayout(new GridBagLayout());
         setBackground(Color.black);
+        clockLabel clockTime = new clockLabel("time");
+        clockLabel clockDay = new clockLabel("day");
+        clockLabel clockDate = new clockLabel("date");
         add(clockTime);
         add(clockDay);
         add(clockDate);
@@ -26,9 +24,9 @@ public class Clock extends JPanel{
 
 class clockLabel extends JLabel implements ActionListener {
 
-    String type;
-    SimpleDateFormat sdf;
-    String font = "antar";
+    private String type;
+    private SimpleDateFormat sdf;
+    private String font = "antar";
 
     public clockLabel(String type) {
         this.type = type;
