@@ -17,6 +17,7 @@ public class GUI extends JFrame {
     JPanel explorer = new JPanel();
     JPanel mic = new JPanel();
     JPanel clock = new JPanel();
+    JPanel worldClock = new JPanel();
     JPanel stopWatch = new JPanel();
     JPanel twitch = new JPanel();
     JPanel champions = new JPanel();
@@ -41,6 +42,7 @@ public class GUI extends JFrame {
 
     public GUI() {
         Clock cl = new Clock();
+        WorldClock wc1 = new WorldClock();
         Stopwatch sw = new Stopwatch();
         //Suggestion sg = new Suggestion();
         listModel = new DefaultListModel<>();
@@ -60,6 +62,7 @@ public class GUI extends JFrame {
         mic.add(mute);
         clock.add(cl);
         clock.add(alwaysActive);
+        worldClock.add(wc1);
         stopWatch.add(sw);
         twitch.add(twitchList);
         champions.add(champSearch);
@@ -68,6 +71,7 @@ public class GUI extends JFrame {
         tp.addTab("Restart explorer", explorer);
         tp.addTab("Mic Volume", mic);
         tp.addTab("Clock", clock);
+        tp.addTab("World Clock", worldClock);
         tp.addTab("Stop Watch", stopWatch);
         tp.addTab("Twitch", twitch);
         tp.addTab("Champion.GG", champions);
@@ -75,7 +79,7 @@ public class GUI extends JFrame {
         yt.setSize(new Dimension(200, 100));
 
         add(tp);
-        tp.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        //tp.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         url.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridy = 0;
@@ -83,7 +87,7 @@ public class GUI extends JFrame {
         c.gridy = 1;
         url.add(fav, c);
 
-        setSize(new Dimension(750, 200));
+        setSize(new Dimension(800, 200));
         setVisible(true);
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
